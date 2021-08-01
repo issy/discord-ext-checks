@@ -15,7 +15,6 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
-          python3 .github/scripts/compile_requirements.py
           pip install -r requirements.txt
           pip install -r requirements-ci.txt
       - name: Lint with black
@@ -33,7 +32,6 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
-          python3 .github/scripts/compile_requirements.py
           pip install -r requirements.txt
           pip install -r requirements-ci.txt
       - name: Lint with pylint
@@ -51,7 +49,6 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
-          python3 .github/scripts/compile_requirements.py
           pip install -r requirements.txt
           pip install -r requirements-ci.txt
       - name: Lint with isort
