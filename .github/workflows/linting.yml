@@ -1,0 +1,59 @@
+name: Linting
+
+on: push
+
+jobs:
+  lint-black:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository at the current branch
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 .github/scripts/compile_requirements.py
+          pip install -r requirements.txt
+          pip install -r requirements-ci.txt
+      - name: Lint with black
+        run: |
+          black --diff .
+  lint-pylint:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository at the current branch
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 .github/scripts/compile_requirements.py
+          pip install -r requirements.txt
+          pip install -r requirements-ci.txt
+      - name: Lint with pylint
+        run: |
+          pylint --msg-template='::warning file={path},line={line},col={column}::{msg}' */ || exit 0
+  lint-isort:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository at the current branch
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 .github/scripts/compile_requirements.py
+          pip install -r requirements.txt
+          pip install -r requirements-ci.txt
+      - name: Lint with isort
+        run: |
+          isort --check --diff .
