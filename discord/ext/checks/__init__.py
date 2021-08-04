@@ -2,9 +2,6 @@ import logging
 from functools import wraps
 from typing import Awaitable, Callable
 
-# Needed for the setup.py script
-__version__ = "0.0.1a"
-
 # consistency with the `discord` namespaced logging
 log = logging.getLogger(__name__)
 
