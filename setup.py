@@ -4,7 +4,7 @@ setup(
     name="discord-ext-checks",
     author="Issy",
     url="https://github.com/issy/discordpy-event-checks",
-    version="0.0.1b",
+    version="0.0.1b1",
     packages=["discord.ext.checks"],
     license="MIT",
     description="An extension module to add simple check decorators to event listeners in discord.py",
