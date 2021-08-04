@@ -2,7 +2,6 @@ import logging
 from functools import wraps
 from typing import Awaitable, Callable
 
-
 # consistency with the `discord` namespaced logging
 log = logging.getLogger(__name__)
 
