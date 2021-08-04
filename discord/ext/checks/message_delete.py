@@ -1,7 +1,7 @@
+from typing import Awaitable, Dict, Union
+
 import discord
 from discord.ext import commands
-from typing import Awaitable, Union, Dict
-
 
 _ChannelType = Union[discord.abc.GuildChannel, discord.DMChannel]
 
