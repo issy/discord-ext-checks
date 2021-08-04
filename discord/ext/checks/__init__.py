@@ -2,6 +2,8 @@ import logging
 from functools import wraps
 from typing import Awaitable, Callable
 
+from . import message, message_delete, message_edit
+
 # consistency with the `discord` namespaced logging
 log = logging.getLogger(__name__)
 

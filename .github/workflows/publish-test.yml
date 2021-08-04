@@ -1,4 +1,4 @@
-name: Publish to Pypi
+name: Publish to TestPypi
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-publish:
-    name: Build and publish Python distributions to PyPI and TestPyPI
+    name: Build and publish Python distributions to TestPyPI
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
